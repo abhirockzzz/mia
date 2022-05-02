@@ -1,0 +1,11 @@
+queue=[300,500,200,300]
+n=1000
+for i in range(0,len(queue)):
+    print("\n\npacket -",queue[i])
+    if n>queue[len(queue)-1]:
+        n=n-queue[i]
+        print("",n)
+        print(queue[i],'sent')
+    else:
+        n=1000
+        print("initialized back to 1000")

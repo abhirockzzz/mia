@@ -1,0 +1,16 @@
+# give/do only only with data=512343012
+def charctercount():
+    data = input("enter the Data")
+    m=list(data)
+    n=0
+    f=int(m[0])
+    c=0
+    while(f<len(m)):
+        n=0+n
+        for i in range(n,f+c):
+            print(m[i])
+        print("frame completed")
+        n=f
+        f=f+int(m[f])
+        c=+1
+charctercount()

@@ -1,0 +1,19 @@
+def dvr(cm):
+    for x in range(len(cm)):
+        neighbours = []
+        rt = [cm[x], ['-' for i in range(len(cm))]]
+    for j, cost in enumerate(cm[x]):
+        if cost == 0:
+            continue
+        if cost <= 9999:
+            neighbours.append(j)
+    for y in neighbours:
+        for v, Dxv in enumerate(cm[x]):
+            updated_Cvx = min(cm[x][v], cm[x][y] + cm[y][v])
+            if updated_Cvx < cm[x][v]:
+                rt[1][v] = y
+                rt[0][v] = updated_Cvx
+    print("routing table of node: " + str(x))
+    print(rt)
+cm = [[0, 2, 9999], [2, 0, 1], [9999, 1, 0]]
+dvr(cm)

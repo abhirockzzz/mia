@@ -1,0 +1,13 @@
+def tokenbucket():
+    n = int(input("enter number of packets need to be sent = "))
+    ch = 1
+    for i in range(n):
+        x = int(input("no of packets send now = "))
+        for j in range(x):
+            ch = int(input("enter '1' to sent a packet"))
+            if (ch == 1):
+                print(f'{i} th packet sent')
+            else:
+                print("packet has not sent")
+    print(f'{n} packets has sent..')
+tokenbucket()

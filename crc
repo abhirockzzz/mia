@@ -1,0 +1,17 @@
+def crc(msg, div, code='000'):
+    msg = msg + code
+    msg = list(msg)
+    div = list(div)
+    for i in range(len(msg)-len(code)):
+        if msg[i] == '1':
+            for j in range(len(div)):
+                msg[i+j] = str((int(msg[i+j])+int(div[j]))%2)
+    return ''.join(msg[-len(code):])
+# Use a divisor that simulates: x^3 + x + 1
+div = '1101'
+msg = '101100000'
+print('Input message:', msg)
+print('Divisor:', div)
+code = crc(msg, div)
+print('Output code:', code)
+print('Success:', crc(msg, div, code) == '000')

@@ -1,0 +1,13 @@
+def parity():
+    c = 0
+    data = input("give the number = ")
+    s = list(data)
+    for i in range(len(s)):
+        if (s[i] == '1'):
+            c = c + 1
+    print(c)
+    if (c % 2 == 0):
+        print("even parity")
+    else:
+        print("odd parity")
+parity()
